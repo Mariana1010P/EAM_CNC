@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f compose.yaml
+    kompose.version: 1.33.0 (3ce457399)
+  labels:
+    io.kompose.service: delete
+  name: delete
+spec:
+  ports:
+    - name: "8082"
+      port: 8082
+      targetPort: 8080
+  selector:
+    io.kompose.service: delete
